@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-trsxo8ny#y^(*s#sz1=ehsv!)9d@y8f&&1f7$#@*uhq+oe3bmr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ebdjango-dev.us-east-2.elasticbeanstalk.com", "172.31.35.46"]
+ALLOWED_HOSTS = ["ebdjango-dev.us-east-2.elasticbeanstalk.com", "127.0.0.1", "172.31.27.189"]
 
 
 # Application definition
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'ebdjango.wsgi.application'
 if 'RDS_HOSTNAME' in os.environ:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ['RDS_DB_NAME'],
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],
